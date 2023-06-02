@@ -1,0 +1,21 @@
+version: '3'
+
+services:
+  api: 
+    build: .
+    depends_on:
+      - mongodb
+    ports:
+      - "3000:3000"
+    environment:
+      - MONGO_URI=mongodb://mongoservice:27017
+    volumes:
+      - .:/app
+  mongodb:
+    image: mongo
+    container_name: mongodb
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: password
+    ports:
+      - "27017:27017"

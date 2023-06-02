@@ -1,0 +1,1 @@
+export function newCarController(req, res, next){}
