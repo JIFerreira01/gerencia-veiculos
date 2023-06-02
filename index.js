@@ -3,7 +3,6 @@ import bodyParser from 'body-parser';
 import {carsRoute} from './routes.js'
 import cors from 'cors'
 import {connectingDb} from './utils.js'
-import mongoose from 'mongoose';
 
 const app = express();
 
