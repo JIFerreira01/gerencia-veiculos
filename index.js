@@ -15,5 +15,7 @@ app.use('/api', carsRoute)
 
 connectingDb()
 
-app.listen(PORT, HOST)
+app.listen(PORT, HOST, () => {
+    console.log('Server ir running on PORT', process.env.PORT)
+})
 

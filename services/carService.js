@@ -8,10 +8,17 @@ export function getCarsService() {
 }
 
 export function getCarService(param) {
-    console.log('getCarService')
-    return Vehicles.findOne({license_plate: param})
+    return Vehicles.collection.findOne({license_plate: param})
 }
 
 export function newCarService(param) {
     return Vehicles.collection.insertOne(param)
+}
+
+export function updateCarService(filter, object){
+    return Vehicles.findOneAndUpdate(filter, object)
+}
+
+export function deleteCarService(filter){
+    return Vehicles.findOneAndRemove(filter)
 }

@@ -1,16 +1,5 @@
-import { newCarService, getCarService } from "../services/carService.js";
-
-function verifyIfCarExists(param) {
-   return getCarService(param?.license_plate)
-            .then((data) => {
-                if(data){
-                    return "Veículo Cadastrado"
-                } else {
-                    return "Veiculo não cadastrado"
-                }
-            })
-            .catch((error) => "Ocorreu um erro ao inserir")
-}
+import { newCarService } from "../services/carService.js";
+import { verifyIfCarExists } from '../utils.js'
 
 function insertingNewData(param) {
     return newCarService(param)
