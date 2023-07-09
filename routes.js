@@ -8,7 +8,7 @@ import {deleteCarController} from './controller/deleteCar.controller.js'
 export const carsRoute = express.Router();
 
 carsRoute.get('/', getCarsController)
-carsRoute.get('/:id', getCarController)
+carsRoute.get('/car/:id', getCarController)
 carsRoute.post('/new-car', newCarController)
 carsRoute.put('/update-car', updateCarController)
 carsRoute.delete('/remove-car', deleteCarController)

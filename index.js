@@ -3,7 +3,6 @@ import bodyParser from 'body-parser';
 import {carsRoute} from './routes.js'
 import cors from 'cors'
 import {connectingDb} from './utils.js'
-import mongoose from 'mongoose';
 
 const app = express();
 
@@ -16,5 +15,7 @@ app.use('/api', carsRoute)
 
 connectingDb()
 
-app.listen(PORT, HOST)
+app.listen(PORT, HOST, () => {
+    console.log('Server ir running on PORT', process.env.PORT)
+})
 
